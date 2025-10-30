@@ -1,0 +1,34 @@
+[
+    {
+        "id": "led-001",
+        "name": "LED du bureau",
+        "type": "actuator",
+        "location": "Salle A101",
+        "state": false
+    },
+    {
+        "id": "temp-001",
+        "name": "Capteur Temp\u00e9rature",
+        "type": "sensor",
+        "location": "Salle A101",
+        "value": "test"
+    },
+    {
+        "id": "test",
+        "name": "test",
+        "type": "Actuator",
+        "location": "Rodez"
+    },
+    {
+        "id": "test2",
+        "name": "test24",
+        "type": "Actuator",
+        "location": "Rodez"
+    },
+    {
+        "id": "test3",
+        "name": "test3",
+        "type": "Actuator",
+        "location": "Rodez"
+    }
+]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6j2xlsl38ii3"]
+
+[ext_resource type="PackedScene" uid="uid://b6qh8h6etvk6w" path="res://modeles/Button.blend" id="1_bpako"]
+[ext_resource type="Script" uid="uid://dqqvixdyig6yc" path="res://scripts/button_node.gd" id="1_srpbc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_srpbc"]
+size = Vector3(4.0460663, 1, 2.0456543)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l53ua"]
+size = Vector3(4.029297, 3.0351563, 1.9592285)
+
+[node name="ButtonNode" type="Node3D"]
+script = ExtResource("1_srpbc")
+
+[node name="ButtonModel" parent="." instance=ExtResource("1_bpako")]
+
+[node name="On" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="On"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013969421, 0, 1.0377197)
+shape = SubResource("BoxShape3D_srpbc")
+
+[node name="Off" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Off"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01171875, -1.0175781, -1.0123159)
+shape = SubResource("BoxShape3D_l53ua")
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]
+[connection signal="input_event" from="On" to="." method="_on_on_input_event"]
+[connection signal="input_event" from="Off" to="." method="_on_off_input_event"]

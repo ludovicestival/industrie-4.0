@@ -1,0 +1,23 @@
+En python, donne-moi un template minimal pour une application flask.
+
+Quelle est la syntaxe pour faire des routes en POST ?
+
+Donne-moi un script python qui utilise la librairie requests pour tester les routes à la place des commandes curl
+
+Comment ajouter une route paramétrée ?
+
+Comment renvoyer une donnée au format json dans une route ?
+
+Comment utiliser JS et fetch pour envoyer des requêtes get et post vers une API ?
+
+Comment activer le CORS dans flask ?
+
+Fais-moi un fichier CSS pour une table classique
+
+En JS, quelle est la syntaxe pour ajouter un event listener sur un bouton ?
+
+Avec flask, comment utiliser une route à la fois en get et en post ?
+
+Génère-moi le code HTML pour créer un formulaire avec des champs texte : id, name, type et location. Génère aussi un fichier CSS pour avoir un style basique. Génère aussi le code javascript pour récupérer le contenu du formulaire.
+
+Génère le code CSS et JS nécessaire pour faire une modale qui s'ouvre quand on clique sur un bouton. La modale contient un formulaire qui permet de changer les champs textes : nom, type et emplacement. Le contenu du formulaire doit être ajouté depuis le JS.

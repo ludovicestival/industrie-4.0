@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://brnpbigp2huto"]
+
+[ext_resource type="PackedScene" uid="uid://b6j2xlsl38ii3" path="res://scenes/button_node.tscn" id="1_g28hq"]
+[ext_resource type="Script" uid="uid://bkkcalnxeeses" path="res://scripts/scene_2.gd" id="1_jcpy2"]
+[ext_resource type="PackedScene" uid="uid://cv8lll7d0j77d" path="res://scenes/led_node.tscn" id="3_jcpy2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g28hq"]
+
+[sub_resource type="Sky" id="Sky_3hvph"]
+sky_material = SubResource("ProceduralSkyMaterial_g28hq")
+
+[sub_resource type="Environment" id="Environment_8dm54"]
+background_mode = 2
+background_energy_multiplier = 1.75
+sky = SubResource("Sky_3hvph")
+
+[sub_resource type="GDScript" id="GDScript_8dm54"]
+script/source = "extends HTTPRequest
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_jcpy2")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.011561416, -0.6870614, 0.72650737, 0.04107708, 0.72626895, 0.68618226, -0.9990891, 0.021909561, 0.036619175, 4.340043, 7.817464, 8.216789)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8dm54")
+
+[node name="ButtonNode" parent="." instance=ExtResource("1_g28hq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.491982, 1.417824, 15.015324)
+
+[node name="HTTPRequest" type="HTTPRequest" parent="ButtonNode"]
+
+[node name="LedNode" parent="." instance=ExtResource("3_jcpy2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5506783, 2.4572382, 2.1158252)
+
+[node name="HTTPRequest" type="HTTPRequest" parent="LedNode"]
+script = SubResource("GDScript_8dm54")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="request_completed" from="ButtonNode/HTTPRequest" to="ButtonNode" method="_on_http_request_request_completed"]
+[connection signal="request_completed" from="LedNode/HTTPRequest" to="LedNode" method="_on_http_request_request_completed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

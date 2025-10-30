@@ -1,0 +1,59 @@
+/* Table container */
+table {
+  width: 100%;
+  /* La table prendra toute la largeur disponible */
+  border-collapse: collapse;
+  /* Fusionne les bordures de la table */
+  margin: 20px 0;
+  /* Espacement autour de la table */
+  font-family: Arial, sans-serif;
+  /* Police de caractères */
+}
+
+/* Style des en-têtes de la table */
+th {
+  background-color: #4CAF50;
+  /* Couleur de fond des en-têtes */
+  color: white;
+  /* Couleur du texte */
+  padding: 12px;
+  /* Espacement intérieur */
+  text-align: left;
+  /* Alignement du texte à gauche */
+}
+
+/* Style des cellules de données */
+td {
+  border: 1px solid #ddd;
+  /* Bordure gris clair autour des cellules */
+  padding: 12px;
+  /* Espacement intérieur */
+  text-align: left;
+  /* Alignement du texte à gauche */
+}
+
+/* Style pour les lignes impaires (zebra effect) */
+tr:nth-child(odd) {
+  background-color: #f2f2f2;
+  /* Fond gris clair pour les lignes impaires */
+}
+
+/* Style au survol des lignes */
+tr:hover {
+  background-color: #ddd;
+  /* Fond gris foncé lorsque l'utilisateur survole une ligne */
+}
+
+/* Bordure générale de la table */
+table,
+th,
+td {
+  border: 1px solid #ddd;
+  /* Bordure gris clair pour toute la table */
+}
+
+/* Style de la première colonne (par exemple, colonne d'identifiant) */
+td:first-child {
+  font-weight: bold;
+  /* Texte en gras pour la première colonne */
+}

@@ -1,0 +1,3 @@
+En Godot, comment faire une requête PUT vers une api (localhost) ? Comment passer des données en JSON ?
+
+En Godot, comment vérifier qu'une clé existe dans un dictionnaire ?
